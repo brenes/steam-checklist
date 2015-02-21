@@ -2,4 +2,9 @@
 
 <%= image_tag @user.avatar_url %>
 
+<ul>
+<% @user.owned_games.includes(:game).each do |owned_game|%>
+  <li><%= owned_game.game.name %></li>
+<% end -%>
+</ul>
 
